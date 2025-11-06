@@ -54,7 +54,7 @@ A full guide is inside database/README.md.
 
 ---
 
-⭐ Like The Project?
+## ⭐ Like The Project?
 If you find this useful, please ⭐ star the repo on GitHub.
 It helps others discover the project and supports future development.
 
