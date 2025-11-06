@@ -10,21 +10,63 @@ The goal is to help individuals, students, and professionals discover the right 
 - 🎨 **Modern UI/UX** – Clean and responsive design with horizontal sliders and premium/light theme
 - 🔗 **Direct Redirects** – Jump directly to the chosen AI tool’s website
 
-## 🚀 Tech Stack
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** MySQL + (planned integration for recommendations)  
-- **Other Tools:** Python (for AI recommendation model)
+## 🏗️ Tech Stack
 
-## 📌 Project Vision
-The AI Toolbox aims to:
-- Simplify AI discovery by bringing tools into one hub  
-- Provide summaries and quick comparisons of AI tools  
-- Recommend the best tool based on user input and workflow needs  
-- Enable faster adoption of AI in education, work, and personal projects  
+### **Frontend**
+- React (Vite or CRA)
+- Axios
+- React Router
 
-## 🤝 Contributing
-Contributions are welcome!  
-You can suggest features, report bugs, or submit pull requests to improve AI Toolbox.
+### **Backend**
+- Spring Boot  
+- Spring Web  
+- Spring Security (JWT Authentication)  
+- Spring Data JPA / Hibernate  
+
+### **Database**
+- MySQL  
+- Organized schema, seed data, and migrations included
+
+### **Storage & CDN**
+- Local static folder (development)  
+- Cloudflare CDN (production)
+
+### **Deployment**
+- Frontend → Vercel   
+- Backend → Render   
+- MySQL → Railway  
+
+---
+
+## 📁 Project Structure
+AI-Toolbox/
+│
+├── ai-toolbox-frontend/ # React frontend
+├── ai-toolbox-backend/ # Spring Boot backend
+├── database/ # SQL schema, seed data, migrations
+├── docs/ # Architecture, API docs, diagrams
+├── .gitignore
+└── README.md
+
+---
+
+## 🗄️ Database Setup
+
+1. Create a database:
+```sql
+CREATE DATABASE aitoolbox;
+USE aitoolbox;
+Run all SQL files inside database/schema/
+
+Run sample data inside database/seed/
+
+Apply optional migrations inside database/migrations/
+
+A full guide is inside database/README.md.
+
+⭐ Like The Project?
+If you find this useful, please ⭐ star the repo on GitHub.
+It helps others discover the project and supports future development.
 
 ## 📜 License
 This project is licensed under the [MIT License](LICENSE).

@@ -1,0 +1,65 @@
+# ---------------------------------------
+.DS_Store
+Thumbs.db
+*.log
+
+# ---------------------------------------
+#  Environment Files
+# ---------------------------------------
+.env
+.env.local
+.env.*.local
+application.properties
+application.yml
+
+# ---------------------------------------
+#  Node / React
+# ---------------------------------------
+node_modules/
+dist/
+build/
+.cache/
+.vite/
+
+# Editor files
+.vscode/
+.idea/
+
+# ---------------------------------------
+#  Java / Spring Boot
+# ---------------------------------------
+target/
+*.jar
+*.war
+*.class
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.properties
+
+# Spring Boot logs
+spring.log
+
+# ---------------------------------------
+#  OS Files
+# ---------------------------------------
+*.swp
+*.swo
+
+# ---------------------------------------
+#  Database Dumps
+# ---------------------------------------
+*.sql
+*.dump
+*.db
+
+# ---------------------------------------
+#  Docker
+# ---------------------------------------
+/docker-data/
+
+# ---------------------------------------
+#  Frontend Production Build in Backend (if ever copied)
+# ---------------------------------------
+ai-toolbox-backend/src/main/resources/static/
+
