@@ -38,21 +38,9 @@ The goal is to help individuals, students, and professionals discover the right 
 
 ---
 
-## 📁 Project Structure
-AI-Toolbox/
-│
-├── ai-toolbox-frontend/ # React frontend
-├── ai-toolbox-backend/ # Spring Boot backend
-├── database/ # SQL schema, seed data, migrations
-├── docs/ # Architecture, API docs, diagrams
-├── .gitignore
-└── README.md
-
----
-
 ## 🗄️ Database Setup
 
-1. Create a database:
+Create a database:
 ```sql
 CREATE DATABASE aitoolbox;
 USE aitoolbox;
@@ -63,6 +51,8 @@ Run sample data inside database/seed/
 Apply optional migrations inside database/migrations/
 
 A full guide is inside database/README.md.
+
+---
 
 ⭐ Like The Project?
 If you find this useful, please ⭐ star the repo on GitHub.
