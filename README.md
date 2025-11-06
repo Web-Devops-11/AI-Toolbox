@@ -53,6 +53,7 @@ Apply optional migrations inside database/migrations/
 A full guide is inside database/README.md.
 
 ---
+```
 
 ## ⭐ Like The Project?
 If you find this useful, please ⭐ star the repo on GitHub.
