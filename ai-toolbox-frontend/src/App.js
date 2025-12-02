@@ -1,14 +1,15 @@
-import './App.css';
+import Header from './components/layout/Header'
+import SearchBar from './components/layout/SearchBar'
+import SideBar from './components/layout/Sidebar'
+import Layout from './components/layout/Layout'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Welcome to AI Toolbox</h1>
-        <p>Your one-stop solution for AI tools and resources.</p> 
-      </header>
-    </div>
-  );
+function App()
+{ 
+    return <>
+    <Header/>
+    <SearchBar/>
+    <SideBar/>
+    <Layout/>
+    </>; 
 }
-
 export default App;
