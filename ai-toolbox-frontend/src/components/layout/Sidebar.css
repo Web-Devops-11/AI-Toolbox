@@ -1,0 +1,33 @@
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background: #111;
+  padding-top: 80px; /* space for header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  color: white;
+  padding: 14px 20px;
+  margin: 10px;
+  background: #222;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.sidebar ul li:hover {
+  background: #00eaff;
+  color: #000;
+  transform: translateX(5px);
+}

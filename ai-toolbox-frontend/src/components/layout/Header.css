@@ -1,0 +1,29 @@
+nav {
+  background-color: #111;
+  padding: 12px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* stay above sidebar */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+nav ul li:hover {
+  color: #00eaff;
+  transform: translateY(-2px);
+}

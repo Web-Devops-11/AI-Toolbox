@@ -1,0 +1,27 @@
+.search-container {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  margin-left: 220px; /* sidebar width */
+  margin-top: 70px;   /* header height */
+  background: #1a1a1a;
+}
+
+.search-input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 4px;
+  background: #333;
+  border: none;
+  color: white;
+}
+
+.search-btn {
+  padding: 10px 16px;
+  background: #00eaff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #000;
+  font-weight: 600;
+}
