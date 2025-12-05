@@ -1,6 +1,15 @@
+import React from 'react';
+import Header from './Header';
+import SideBar from './SideBar';
+import SearchBar from './SearchBar';
+import { Outlet } from 'react-router-dom';
+
 function Layout() {
     return <>
-    <h1>hello  i am Layout</h1>
+    <Header/>
+    <SideBar/>
+    <SearchBar/>
+    <Outlet/>
     </>    
 }
 
