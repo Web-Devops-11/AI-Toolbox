@@ -1,16 +1,19 @@
 import React from 'react';
 import Header from './Header';
-import SideBar from './SideBar';
+import Sidebar from './Sidebar';
 import SearchBar from './SearchBar';
 import { Outlet } from 'react-router-dom';
 
-function Layout() {
-    return <>
-    <Header/>
-    <SideBar/>
-    <SearchBar/>
-    <Outlet/>
-    </>    
-}
+export default function Layout() {
+  return (
+    <div className="flex">
+      {/* Sidebar */}
+      <Sidebar />
 
-export default Layout;
+      {/* Main Content */}
+      <main className="flex-1 ml-64 p-6 bg-[#fffaf0] min-h-screen">
+        <Outlet />
+      </main>
+    </div>
+  );
+}
