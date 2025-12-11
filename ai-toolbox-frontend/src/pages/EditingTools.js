@@ -1,9 +1,32 @@
- 
+ import React from 'react';
+import Header from '../components/layout/Header.js';
+import SearchBar from '../components/layout/SearchBar.js';
+import {
+  Home,
+  TrendingUp,
+  Heart,
+  BrainCircuit,
+  PenTool,
+  Scissors,
+  Video,
+  Image as ImageIcon,
+  Music,
+  Code,   
+  BarChart,
+} from 'lucide-react';
+
+
 export default function EditingTools() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold mb-4">Editing Tools</h1>
-      <p>Welcome to the Editing Tools page. Here you can find various AI-powered tools to assist with editing tasks.</p>
-    </div>
+    <>  
+        <Header 
+        title="Editing Tools"
+        subtitle="AI-powered text editors, proofreaders, and content enhancers"
+        Icon={Scissors}
+        bgcolor="bg-white-0"
+      />
+      <SearchBar />
+        {/* <div className="bg-green-500 text-white p-4">Home Page</div> */}
+        </>
   );
 }

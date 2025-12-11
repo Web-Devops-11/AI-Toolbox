@@ -10,7 +10,7 @@ import {
   Video,
   Image as ImageIcon,
   Music,
-  Code,
+  Code,   
   BarChart,
 } from "lucide-react";
 
@@ -23,7 +23,11 @@ const menuItemActive =
 export default function Sidebar() {
   return (
     <aside className="w-64 h-screen fixed left-0 top-0 bg-[#f9f2e8] border-r border-orange-200 p-5 overflow-y-auto shadow-sm">
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">AI Toolbox</h2>
+      <div className="flex items-center gap-2 mb-6">
+        <BrainCircuit size={24} color="rgb(249 115 22)" />
+        <h2 className="text-2xl font-bold text-gray-800">AI Toolbox</h2>
+     </div>
+
 
       {/* Main Navigation */}
       <nav className="space-y-2">
