@@ -5,87 +5,92 @@ import Header from '../components/layout/Header';
 import SearchBar from '../components/layout/SearchBar';
 import StatsSection from "../components/common/stat";
 import ToolCard from "../components/common/statscard";
+import { useEffect, useState, useRef } from "react";
+import { getHomeData } from "../api/home";
 
-import { Clock, BarChart3, Box } from "lucide-react";
+
+
 
 function Home()
-{ const stats = [
-    {
-      title: "Total Tools",
-      value: "150+",
-      subtitle: "AI tools available",
-      icon: Box
-    },
-    {
-      title: "Categories",
-      value: "12",
-      subtitle: "Different categories",
-      icon: BarChart3
-    },
-    {
-      title: "Recently Added",
-      value: "8",
-      subtitle: "New tools this week",
-      icon: Clock
-    }
-  ];
+{ 
+  // const [stats, setStats] = useState([]);
+  // const [tools, setTools] = useState([]);
 
-  const tools = [
-    {
-      name: "ChatGPT",
-      category: "Writing Tools",
-      image: "/images/chatgpt.png",
-      description: "Advanced conversational assistant for writing.",
-      rating: 4.8,
-      users: "100M+ users",
-      premium: false,
-    },
-    {
-      name: "MidJourney",
-      category: "Image Generation",
-      image: "/images/midjourney.jpg",
-      description: "Create stunning AI-generated art.",
-      rating: 4.7,
-      users: "15M+ users",
-      premium: true,
-    },
-    {
-      name: "ChatGPT",
-      category: "Writing Tools",
-      image: "/images/chatgpt.png",
-      description: "Advanced conversational assistant for writing.",
-      rating: 4.8,
-      users: "100M+ users",
-      premium: false,
-    },
-    {
-      name: "MidJourney",
-      category: "Image Generation",
-      image: "/images/midjourney.jpg",
-      description: "Create stunning AI-generated art.",
-      rating: 4.7,
-      users: "15M+ users",
-      premium: true,
-    },
-    {
-      name: "ChatGPT",
-      category: "Writing Tools",
-      image: "/images/chatgpt.png",
-      description: "Advanced conversational assistant for writing.",
-      rating: 4.8,
-      users: "100M+ users",
-      premium: false,
-    },
-    {
-      name: "MidJourney",
-      category: "Image Generation",
-      image: "/images/midjourney.jpg",
-      description: "Create stunning AI-generated art.",
-      rating: 4.7,
-      users: "15M+ users",
-      premium: true,
-    }
-  ];
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     const data = await getHomeData();
+  //     setStats(data.stats);
+  //     setTools(data.tools);
+  //   }
+  //   fetchData();
+  // }, []);
+  // const [tools, setTools] = useState([]);
+  // const [page, setPage] = useState(0);
+  // const loaderRef = useRef(null);
+
+  // useEffect(() => {
+  //   loadTools();
+  // }, [page]);
+  const [stats, setStats] = useState([]);
+  const [tools, setTools] = useState([]);
+  const [page, setPage] = useState(0);
+  const [lastPage, setLastPage] = useState(false);
+
+  const loaderRef = useRef(null);
+
+  // Load data when page changes
+  useEffect(() => {
+    loadMore();
+  }, [page]);
+
+  async function loadMore() {
+    if (lastPage) return;
+
+    const data = await getHomeData(page, 6);
+
+    setStats(data.stats);
+    setTools((prev) => [...prev, ...data.tools]);
+    setLastPage(data.lastPage);
+  }
+
+  // Infinite Scroll Intersection Observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !lastPage) {
+          setPage((prev) => prev + 1);
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (loaderRef.current) observer.observe(loaderRef.current);
+
+    return () => observer.disconnect();
+  }, [lastPage]);
+
+
+  async function loadTools() {
+    const data = await getHomeData(page, 10);
+    setTools((prev) => [...prev, ...data.content]);
+  
+  }
+
+  // Observer to detect scroll end
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setPage((prev) => prev + 1);
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (loaderRef.current) observer.observe(loaderRef.current);
+
+    return () => observer.disconnect();
+  }, []);
 
     return (
         <>  
@@ -109,6 +114,12 @@ function Home()
         ))}
       </div>
     </div>
+    {/* Infinite Scroll Trigger */}
+      {!lastPage && (
+        <div ref={loaderRef} className="h-10 flex justify-center items-center">
+          <p className="text-gray-500">Loading more tools...</p>
+        </div>
+      )}
         </> 
     ); 
 }
