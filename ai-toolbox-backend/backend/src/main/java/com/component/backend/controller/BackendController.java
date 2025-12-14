@@ -5,10 +5,9 @@ import com.component.backend.dao.CategoryDao;
 import com.component.backend.model.Tool;
 import com.component.backend.model.Category;
 
-
+  
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class BackendController {
     public BackendController(ToolsDao toolsDao, CategoryDao categoryDao) {
         this.toolsDao = toolsDao;
         this.categoryDao = categoryDao;
-    }
+    }  
 
     // Simple greeting
     @GetMapping("/")

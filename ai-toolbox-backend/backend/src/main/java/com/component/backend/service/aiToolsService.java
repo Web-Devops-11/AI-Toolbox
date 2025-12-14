@@ -1,6 +1,5 @@
 package com.component.backend.service;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 import com.component.backend.dao.ToolsDao;
 import com.component.backend.dao.CategoryDao;
 import com.component.backend.model.Tool;
